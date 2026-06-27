@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Reset Pro</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <h1>Cookie Reset Pro</h1>
+      </div>
+      <div class="version">v1.0.0</div>
+    </header>
+
+    <!-- Current site card -->
+    <section class="site-card">
+      <div class="site-top">
+        <div>
+          <div class="label">Current Site</div>
+          <div id="currentDomain" class="domain">Loading...</div>
+        </div>
+        <!-- Session status badge — auto-detected, no user input needed -->
+        <div id="sessionBadge" class="session-badge hidden">
+          <span id="sessionIcon">🔒</span>
+          <span id="sessionText">Logged in</span>
+        </div>
+      </div>
+
+      <!-- Cookie info row -->
+      <div id="cookieInfo" class="cookie-info hidden">
+        <span id="trackingCount" class="pill pill-warn">0 trackers</span>
+        <span id="sessionCount"  class="pill pill-safe">0 session</span>
+      </div>
+
+      <!-- Manual override (only shown when needed) -->
+      <button id="protectBtn" class="protect-btn hidden">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span id="protectBtnText">Add manual protection</span>
+      </button>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls">
+      <div class="toggle-row">
+        <span class="toggle-label-text">Extension</span>
+        <div class="toggle-right">
+          <label class="switch">
+            <input type="checkbox" id="enableToggle">
+            <span class="slider"></span>
+          </label>
+          <span id="enableLabel" class="toggle-val">On</span>
+        </div>
+      </div>
+      <div class="toggle-row">
+        <div>
+          <span class="toggle-label-text">Auto-clean on navigate</span>
+          <div class="toggle-hint">Skips sites where you're logged in</div>
+        </div>
+        <div class="toggle-right">
+          <label class="switch">
+            <input type="checkbox" id="autoCleanToggle">
+            <span class="slider"></span>
+          </label>
+          <span id="autoCleanLabel" class="toggle-val">Off</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Actions -->
+    <section class="actions">
+      <button id="clearCurrentSite" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+        </svg>
+        Clear Current Site
+      </button>
+      <div class="btn-row">
+        <button id="clearAllCookies" class="btn btn-secondary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+          </svg>
+          Clear All Cookies
+        </button>
+        <button id="clearAllStorage" class="btn btn-danger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7M4 7h16"/>
+          </svg>
+          Nuke All
+        </button>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-value" id="cookiesRemoved">0</div>
+          <div class="stat-label">Removed</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="trackingRemoved">0</div>
+          <div class="stat-label">Trackers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="domainsCleaned">0</div>
+          <div class="stat-label">Domains</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="settings">
+      <label class="checkbox-label">
+        <input type="checkbox" id="debugMode">
+        <span>Debug mode</span>
+      </label>
+    </section>
+
+    <footer class="footer">
+      <div id="statusMessage" class="status-message"></div>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
