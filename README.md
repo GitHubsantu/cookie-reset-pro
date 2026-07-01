@@ -348,7 +348,7 @@ The above copyright notice and this permission notice shall be included in all c
 - 🌐 Website: https://imdevops.in
 - 🐙 GitHub: https://github.com/imdevops
 - 🔗 LinkedIn: https://linkedin.com/in/imdevops
-- 📧 Contact: dharani@imdevops.in
+- 📧 Contact: founder@imdevops.in
 
 ---
 
