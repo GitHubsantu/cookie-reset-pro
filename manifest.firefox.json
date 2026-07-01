@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Cookie Reset Pro",
   "short_name": "Cookie Reset Pro",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Dharanidhar Mahata (imdevops)",
   "homepage_url": "https://imdevops.in",
   "description": "Advanced privacy extension that clears all tracking data before and during navigation",

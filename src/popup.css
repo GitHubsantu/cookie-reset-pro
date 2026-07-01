@@ -110,3 +110,47 @@ input:checked + .slider:before { background: white; transform: translateX(18px);
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #1a1a2e; }
 ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+.app-footer {
+  padding: 8px 0;
+  font-size: 11px;
+  text-align: center;
+  color: #999;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #eee;
+  margin-top: 8px;
+}
+
+.app-footer a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.app-footer a:hover {
+  color: #0052a3;
+  text-decoration: underline;
+}
+
+.app-footer .divider {
+  opacity: 0.5;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .app-footer {
+    color: #999;
+    border-top-color: #333;
+  }
+  
+  .app-footer a {
+    color: #66b3ff;
+  }
+  
+  .app-footer a:hover {
+    color: #99ccff;
+  }
+}
